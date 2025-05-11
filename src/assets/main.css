@@ -1,0 +1,54 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: var(--color-text-link);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+.gradient-border {
+  border-radius: 1rem;
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+.gradient-border:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 0.2rem; /* border length  */
+  background: var(--gradient-blue-right);
+  border-radius: inherit;
+  mask:
+    conic-gradient(#000 0 0) content-box exclude,
+    conic-gradient(#000 0 0);
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: var(--color-background-link-hover);
+    color: var(--color-text-link-hover);
+    border-radius: 0.4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}
