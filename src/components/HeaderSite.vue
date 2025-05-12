@@ -29,6 +29,7 @@ export default {
 <style scoped>
 .HeaderRoot {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
 }
