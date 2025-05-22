@@ -8,7 +8,10 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from 'vue'
+import { useWindowSize } from '@vueuse/core'
+
+export default defineComponent({
   name: 'ButtonLinkSocial',
   props: {
     label: {
@@ -20,21 +23,17 @@ export default {
       required: true,
     },
   },
-  data() {
-    return { windowWidth: window.innerWidth }
-  },
-  mounted() {
-    window.addEventListener('resize', () => {
-      this.windowWidth = window.innerWidth
-      console.log(this.isMobile)
-    })
+  setup() {
+    return {
+      windowSize: useWindowSize(),
+    }
   },
   computed: {
     isMobile() {
-      return this.windowWidth <= 768
+      return this.windowSize.width.value <= 768
     },
   },
-}
+})
 </script>
 
 <style scoped>

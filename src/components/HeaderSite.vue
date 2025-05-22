@@ -1,9 +1,7 @@
 <template>
   <div class="HeaderRoot gradient-border">
+    <span v-if="isMobile" class="material-symbols-outlined"> menu </span>
     <h1>David Armes</h1>
-    <ButtonLinkSocial link="tel:18123200302" label="Call">
-      <span class="material-symbols-outlined"> call </span>
-    </ButtonLinkSocial>
     <ButtonLinkSocial link="mailto:david.armes90@gmail.com" label="Email">
       <span class="material-symbols-outlined"> email </span>
     </ButtonLinkSocial>
@@ -14,16 +12,39 @@
       <img src="/github-mark/github-mark-white.png" />
     </ButtonLinkSocial>
   </div>
+  <div class="NavBar gradient-border">
+    <nav>
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/">Skills</RouterLink>
+      <RouterLink to="/">Experience</RouterLink>
+      <RouterLink to="/">Projects</RouterLink>
+      <RouterLink to="/about">About</RouterLink>
+      <RouterLink to="/">Contact</RouterLink>
+    </nav>
+  </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { useWindowSize } from '@vueuse/core'
 import ButtonLinkSocial from './ButtonLinkSocial.vue'
 
-export default {
+export default defineComponent({
+  name: 'HeaderSite',
   components: {
     ButtonLinkSocial,
   },
-}
+  setup() {
+    return {
+      windowSize: useWindowSize(),
+    }
+  },
+  computed: {
+    isMobile() {
+      return this.windowSize.width.value <= 768
+    },
+  },
+})
 </script>
 
 <style scoped>
@@ -32,6 +53,12 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
+}
+
+.NavBar {
+  width: fit-content;
+  margin: 1rem;
+  margin-left: 3rem;
 }
 
 h1 {
@@ -46,15 +73,27 @@ img {
   width: 2rem;
 }
 
-.greetings h1,
-.greetings h3 {
-  text-align: center;
+nav {
+  width: 100%;
+  position: relative;
+  z-index: 100;
 }
 
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
+nav a.router-link-exact-active {
+  color: var(--color-text);
+}
+
+nav a.router-link-exact-active:hover {
+  background-color: transparent;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0 1rem;
+  border-left: 1px solid var(--color-border);
+}
+
+nav a:first-of-type {
+  border: 0;
 }
 </style>
