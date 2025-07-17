@@ -2,11 +2,11 @@
   <div class="NavBar gradient-border">
     <nav>
       <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/">Skills</RouterLink>
-      <RouterLink to="/">Experience</RouterLink>
-      <RouterLink to="/">Projects</RouterLink>
+      <RouterLink to="/skills">Skills</RouterLink>
+      <RouterLink to="/experience">Experience</RouterLink>
+      <RouterLink to="/projects">Projects</RouterLink>
       <RouterLink to="/about">About</RouterLink>
-      <RouterLink to="/">Contact</RouterLink>
+      <RouterLink to="/contact">Contact</RouterLink>
     </nav>
   </div>
 </template>
