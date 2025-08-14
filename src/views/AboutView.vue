@@ -51,7 +51,7 @@
 import { defineComponent } from 'vue'
 import { useWindowSize } from '@vueuse/core'
 import pvImage from 'primevue/image'
-import ButtonLinkSocial from '../components/ButtonLinkSocial.vue'
+import ButtonLinkSocial from '../components/socials/ButtonLinkSocial.vue'
 
 export default defineComponent({
   name: 'HomeView',
