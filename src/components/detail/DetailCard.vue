@@ -15,6 +15,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import useMobile from '@/utilities/useMobile'
 
 export default defineComponent({
   name: 'DetailCard',
@@ -30,6 +31,20 @@ export default defineComponent({
       default: '',
     },
   },
+  setup() {
+    return {
+      isMobile: useMobile().isMobile,
+    }
+  },
+  computed: {
+    flexDirection() {
+      if (this.isMobile) {
+        return 'column'
+      } else {
+        return 'row'
+      }
+    },
+  },
 })
 </script>
 
@@ -39,6 +54,7 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  flex-direction: v-bind(flexDirection);
 }
 .Title {
   display: block;

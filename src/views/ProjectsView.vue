@@ -2,12 +2,12 @@
   <DetailRoot title="Projects" subtitle="A selection of personal and professional projects">
     <!-- Care Programs Worklist -->
     <DetailCard title="Care Programs Worklist" subtitle="Typescript, Python">
-      <div class="Text">
+      <div class="Block">
         Produced a unified view of Aledade's complementary care programs that help private medical
         practices enhance their patients' outcomes and reduce healthcare costs by identifying
         patients who could most benefit from specialized support services.
       </div>
-      <div>
+      <div class="Block">
         <ButtonLink label="Learn More" link="https://aledade.com/what-we-offer/" />
       </div>
       <template #side-content>
@@ -16,12 +16,12 @@
     </DetailCard>
     <!-- Quest Journal -->
     <DetailCard title="Quest Journal" subtitle="Ruby, VB.net">
-      <div class="Text">
+      <div class="Block">
         Authored the #2 most popular add-on for RPG Maker XP. Created custom quest/mission display
         system and a supporting pipeline tool for development of quests. Integrated add-on into
         existing RMXP debugging tools.
       </div>
-      <div>
+      <div class="Block">
         <ButtonLink
           label="Learn More"
           link="https://forums.rpgmakerweb.com/index.php?threads/mobiuss-quest-journal.19144/"
@@ -33,13 +33,13 @@
     </DetailCard>
     <!-- Disaster on Aero VI -->
     <DetailCard title="Disaster on Aero VI" subtitle="Ruby, RPG Maker">
-      <div class="Text">
+      <div class="Block">
         Originated a 2D puzzle adventure game built with RPG Maker XP. Created the game’s map,
         designed all the puzzles, and created various interfaces supporting player
         interaction/puzzle solving. Garnered postivie critical acclaim and over four thousands
         players.
       </div>
-      <div>
+      <div class="Block">
         <ButtonLink
           label="Learn More"
           link="https://forums.rpgmakerweb.com/index.php?threads/disaster-on-aero-vi.29132/"
@@ -51,13 +51,13 @@
     </DetailCard>
     <!-- Artificial Intelligence -->
     <DetailCard title="AI for solving visual brain teasers" subtitle="Python">
-      <div class="Text">
+      <div class="Block">
         Architected and trained custom artificial intelligence to solve human intelligence tests -
         Raven's Progressive Matrices - using efficient image recognition methods. Acheived realtime
         levels of performance while maintaining sufficient accuracy to meet or exceed adult scoring
         averages.
       </div>
-      <div>
+      <div class="Block">
         <ButtonLink label="Learn More" link="./projects/RPM-AI-Paper.pdf" />
       </div>
       <template #side-content>
@@ -86,7 +86,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.Text {
+.Block {
   margin-bottom: 2rem;
 }
 </style>
