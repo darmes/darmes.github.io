@@ -4,17 +4,17 @@
       <span class="material-symbols-outlined"> email </span>
     </ButtonLinkSocial>
     <ButtonLinkSocial link="https://www.linkedin.com/in/david-armes-sse/" label="LinkedIn">
-      <img src="/in-logo/InBug-White.png" />
+      <img :src="linkedInLogo" />
     </ButtonLinkSocial>
     <ButtonLinkSocial link="https://github.com/darmes" label="Github">
-      <img src="/github-mark/github-mark-white.png" />
+      <img :src="githubLogo" />
     </ButtonLinkSocial>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useWindowSize } from '@vueuse/core'
+import { useWindowSize, useDark } from '@vueuse/core'
 import ButtonLinkSocial from './ButtonLink.vue'
 
 export default defineComponent({
@@ -25,11 +25,26 @@ export default defineComponent({
   setup() {
     return {
       windowSize: useWindowSize(),
+      isDark: useDark(),
     }
   },
   computed: {
     isMobile() {
       return this.windowSize.width.value <= 768
+    },
+    githubLogo() {
+      if (this.isDark) {
+        return '/github-mark/github-mark-white.png'
+      } else {
+        return '/github-mark/github-mark.png'
+      }
+    },
+    linkedInLogo() {
+      if (this.isDark) {
+        return '/in-logo/InBug-White.png'
+      } else {
+        return '/in-logo/InBug-Black.png'
+      }
     },
   },
 })

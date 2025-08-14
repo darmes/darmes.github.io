@@ -65,4 +65,12 @@ export default defineComponent({
   line-height: 1.5;
   flex-grow: 1;
 }
+@media (prefers-color-scheme: light) {
+  .SideContent {
+    border: 1px solid;
+    border-color: var(--color-border);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+  }
+}
 </style>
