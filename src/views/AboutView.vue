@@ -32,7 +32,7 @@
           from you!
         </p>
       </div>
-      <AllLinkSocial />
+      <SocialsButtonGroup />
     </div>
   </div>
 </template>
@@ -41,12 +41,12 @@
 import { defineComponent } from 'vue'
 import { useWindowSize } from '@vueuse/core'
 import pvImage from 'primevue/image'
-import AllLinkSocial from '@/components/socials/AllLinkSocial.vue'
+import SocialsButtonGroup from '@/components/buttons/SocialsButtonGroup.vue'
 
 export default defineComponent({
   name: 'HomeView',
   components: {
-    AllLinkSocial,
+    SocialsButtonGroup,
     pvImage,
   },
   setup() {

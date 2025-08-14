@@ -1,14 +1,14 @@
 <template>
   <div class="DetailCard">
-    <div class="Title">{{ title }}</div>
-    <div class="Subtitle">{{ subtitle }}</div>
-    <div class="AllContent">
+    <div class="MainContent">
+      <div class="Title">{{ title }}</div>
+      <div class="Subtitle">{{ subtitle }}</div>
       <div class="Content">
         <slot></slot>
       </div>
-      <div class="SideContent">
-        <slot name="side-content"></slot>
-      </div>
+    </div>
+    <div class="SideContent">
+      <slot name="side-content"></slot>
     </div>
   </div>
 </template>
@@ -47,6 +47,9 @@ export default defineComponent({
 <style scoped>
 .DetailCard {
   margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
 }
 .Title {
   display: block;
@@ -57,18 +60,9 @@ export default defineComponent({
   font-style: italic;
   margin-bottom: 0.4rem;
 }
-.AllContent {
-  display: flex;
-  justify-content: space-between;
-}
-.Content {
-  /* text-align: justify; */
-  /* margin: 1rem 0; */
+.MainContent {
   max-width: 70rem;
   line-height: 1.5;
   flex-grow: 1;
-}
-.SideContent {
-  font: bold;
 }
 </style>

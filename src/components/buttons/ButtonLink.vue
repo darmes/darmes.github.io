@@ -1,8 +1,8 @@
 <template>
   <a class="ButtonRoot gradient-border" :href="link" target="_blank">
     <div class="ImgLabel">
-      <slot> No Image </slot>
-      <div v-if="!isMobile">
+      <slot></slot>
+      <div v-if="!$slots.default || !isMobile">
         {{ label }}
       </div>
     </div>

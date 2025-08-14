@@ -2,19 +2,19 @@
   <div class="HeaderRoot gradient-border">
     <span v-if="isMobile" class="material-symbols-outlined"> menu </span>
     <h1>David Armes</h1>
-    <AllLinkSocial />
+    <SocialsButtonGroup />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useWindowSize } from '@vueuse/core'
-import AllLinkSocial from '@/components/socials/AllLinkSocial.vue'
+import SocialsButtonGroup from '../buttons/SocialsButtonGroup.vue'
 
 export default defineComponent({
   name: 'HeaderSite',
   components: {
-    AllLinkSocial,
+    SocialsButtonGroup,
   },
   setup() {
     return {

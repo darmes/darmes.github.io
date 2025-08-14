@@ -14,13 +14,9 @@
 import { defineComponent } from 'vue'
 import { useWindowSize } from '@vueuse/core'
 
-import Menubar from 'primevue/menubar'
-
 export default defineComponent({
   name: 'HeaderNavBar',
-  components: {
-    Menubar,
-  },
+  components: {},
   setup() {
     return {
       windowSize: useWindowSize(),
