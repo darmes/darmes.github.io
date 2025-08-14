@@ -32,7 +32,7 @@ export default defineComponent({
   },
   computed: {
     isMobile() {
-      return this.windowSize.width.value <= 768
+      return this.windowSize.width.value <= 1024
     },
   },
 })

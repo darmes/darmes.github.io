@@ -32,17 +32,7 @@
           from you!
         </p>
       </div>
-      <div class="Connect">
-        <ButtonLinkSocial link="mailto:david.armes90@gmail.com" label="Email">
-          <span class="material-symbols-outlined"> email </span>
-        </ButtonLinkSocial>
-        <ButtonLinkSocial link="https://www.linkedin.com/in/david-armes-sse/" label="LinkedIn">
-          <img src="/in-logo/InBug-White.png" />
-        </ButtonLinkSocial>
-        <ButtonLinkSocial link="https://github.com/darmes" label="Github">
-          <img src="/github-mark/github-mark-white.png" />
-        </ButtonLinkSocial>
-      </div>
+      <AllLinkSocial />
     </div>
   </div>
 </template>
@@ -51,12 +41,12 @@
 import { defineComponent } from 'vue'
 import { useWindowSize } from '@vueuse/core'
 import pvImage from 'primevue/image'
-import ButtonLinkSocial from '../components/socials/ButtonLinkSocial.vue'
+import AllLinkSocial from '@/components/socials/AllLinkSocial.vue'
 
 export default defineComponent({
   name: 'HomeView',
   components: {
-    ButtonLinkSocial,
+    AllLinkSocial,
     pvImage,
   },
   setup() {
@@ -87,11 +77,5 @@ export default defineComponent({
 }
 .Intro p {
   margin-bottom: 2rem;
-}
-.Connect {
-  /* width: 2rem; */
-}
-a img {
-  width: 2.4rem;
 }
 </style>

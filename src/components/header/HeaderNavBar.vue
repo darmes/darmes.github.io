@@ -6,7 +6,6 @@
       <RouterLink to="/experience">Experience</RouterLink>
       <RouterLink to="/projects">Projects</RouterLink>
       <RouterLink to="/about">About</RouterLink>
-      <RouterLink to="/contact">Contact</RouterLink>
     </nav>
   </div>
 </template>
