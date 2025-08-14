@@ -1,5 +1,5 @@
 import { computed } from 'vue'
-import useMobile from '@/utilities/useMobile'
+import { useWindowSize } from '@vueuse/core'
 
 const windowSize = useWindowSize()
 

@@ -34,9 +34,9 @@ export default defineComponent({
   computed: {
     leftRightMargin() {
       if (this.isMobile) {
-        return '4rem'
-      } else {
         return '0'
+      } else {
+        return '4rem'
       }
     },
   },
