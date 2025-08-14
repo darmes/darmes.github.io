@@ -36,7 +36,7 @@ a,
   a:hover {
     background-color: var(--color-background-link-hover);
     color: var(--color-text-link-hover);
-    border-radius: 0.4rem;
+    /* border-radius: 0.4rem; */
   }
 }
 

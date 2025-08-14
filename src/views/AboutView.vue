@@ -91,7 +91,7 @@ export default defineComponent({
 .Connect {
   /* width: 2rem; */
 }
-a > img {
-  width: 2rem;
+a img {
+  width: 2.4rem;
 }
 </style>

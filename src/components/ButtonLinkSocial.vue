@@ -1,8 +1,10 @@
 <template>
   <a class="ButtonRoot gradient-border" :href="link" target="_blank">
-    <slot> No Image </slot>
-    <div v-if="!isMobile">
-      {{ label }}
+    <div class="ImgLabel">
+      <slot> No Image </slot>
+      <div v-if="!isMobile">
+        {{ label }}
+      </div>
     </div>
   </a>
 </template>
@@ -38,11 +40,14 @@ export default defineComponent({
 
 <style scoped>
 .ButtonRoot {
+  display: block;
+  align-items: center;
+  min-height: 3.4rem;
+  width: fit-content;
+}
+.ImgLabel {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  min-height: 3.4rem;
-  min-width: 4.4rem;
+  gap: 0.6rem;
 }
 </style>
