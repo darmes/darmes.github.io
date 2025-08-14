@@ -1,6 +1,6 @@
 <template>
   <div class="HomeView">
-    <div class="Left">
+    <div class="Left gradient-border">
       <pvImage src="/family.webp" alt="Image" width="500" />
     </div>
     <div class="Right">
@@ -68,6 +68,9 @@ export default defineComponent({
   justify-content: space-between;
   margin: 0 4rem;
   gap: 2rem;
+}
+.Left {
+  padding-top: 1rem;
 }
 .Intro {
   text-align: justify;

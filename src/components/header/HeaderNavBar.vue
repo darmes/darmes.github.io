@@ -1,11 +1,11 @@
 <template>
   <div class="NavBar gradient-border">
     <nav>
-      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/" v-if="!mini">Home</RouterLink>
       <RouterLink to="/skills">Skills</RouterLink>
       <RouterLink to="/experience">Experience</RouterLink>
       <RouterLink to="/projects">Projects</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
+      <RouterLink to="/about" v-if="!mini">About</RouterLink>
     </nav>
   </div>
 </template>
@@ -17,6 +17,13 @@ import { useWindowSize } from '@vueuse/core'
 export default defineComponent({
   name: 'HeaderNavBar',
   components: {},
+  props: {
+    mini: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
   setup() {
     return {
       windowSize: useWindowSize(),
@@ -31,29 +38,10 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.HeaderRoot {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem;
-}
-
 .NavBar {
   width: fit-content;
   margin: 1rem;
   margin-left: 3rem;
-}
-
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -0.2rem;
-  flex-grow: 1;
-}
-
-img {
-  width: 2rem;
 }
 
 nav {

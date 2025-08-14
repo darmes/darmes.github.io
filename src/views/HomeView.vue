@@ -14,15 +14,7 @@
       </p>
     </div>
     <div class="Links">
-      <pv-button asChild v-slot="slotProps">
-        <RouterLink to="/Skills" :class="slotProps.class">Skills</RouterLink>
-      </pv-button>
-      <pv-button asChild v-slot="slotProps">
-        <RouterLink to="/Experience" :class="slotProps.class">Experience</RouterLink>
-      </pv-button>
-      <pv-button asChild v-slot="slotProps">
-        <RouterLink to="/projects" :class="slotProps.class">Projects</RouterLink>
-      </pv-button>
+      <HeaderNavBar mini />
     </div>
   </div>
 </template>
@@ -31,13 +23,13 @@
 import { defineComponent } from 'vue'
 import { useWindowSize } from '@vueuse/core'
 import Avatar from 'primevue/avatar'
-import pvButton from 'primevue/button'
+import HeaderNavBar from '@/components/header/HeaderNavBar.vue'
 
 export default defineComponent({
   name: 'HomeView',
   components: {
     Avatar,
-    pvButton,
+    HeaderNavBar,
   },
   setup() {
     return {
