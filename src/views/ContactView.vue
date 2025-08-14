@@ -16,7 +16,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useWindowSize } from '@vueuse/core'
-import ButtonLinkSocial from '../components/socials/ButtonLinkSocial.vue'
+import ButtonLinkSocial from '../components/socials/ButtonLink.vue'
 
 export default defineComponent({
   name: 'HeaderSite',
