@@ -1,22 +1,18 @@
 <template>
-  <div class="DetailChipList">
-    <chip class="Chip" v-for="(chip, idx) in chips" :label="chip" :key="idx" />
+  <div class="DetailChip">
+    {{ label }}
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useWindowSize } from '@vueuse/core'
-import Chip from './DetailChip.vue'
 
 export default defineComponent({
-  name: 'DetailChipList',
-  components: {
-    Chip,
-  },
+  name: 'DetailChip',
   props: {
-    chips: {
-      type: Array<string>,
+    label: {
+      type: String,
       required: true,
     },
   },
@@ -34,10 +30,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.DetailChipList {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 1rem;
-  row-gap: 1rem;
+.DetailChip {
+  background-color: var(--color-background-mute);
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
 }
 </style>

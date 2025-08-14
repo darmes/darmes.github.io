@@ -35,7 +35,6 @@
           'Jira',
           'Confluence',
           'Microsoft Office',
-          'Blender',
         ]"
       />
     </DetailCard>
