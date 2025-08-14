@@ -20,6 +20,5 @@ app.use(PrimeVue, {
 })
 
 // mount after the initial navigation is ready
-// await router.isReady()
-// FIXME: This doesn't work yet
+await router.isReady()
 app.mount('#app')
