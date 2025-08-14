@@ -50,7 +50,7 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style scoped>
 .Name {
   display: block;
   text-align: center;
