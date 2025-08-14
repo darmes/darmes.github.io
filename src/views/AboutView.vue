@@ -1,7 +1,7 @@
 <template>
   <div class="HomeView">
     <div class="Left gradient-border">
-      <pvImage src="/family.webp" alt="Image" width="500" />
+      <pvImage src="/family.webp" alt="Image" width="100%" />
     </div>
     <div class="Right">
       <div class="Intro">
@@ -54,6 +54,29 @@ export default defineComponent({
       isMobile: useMobile().isMobile,
     }
   },
+  computed: {
+    flexDirection() {
+      if (this.isMobile) {
+        return 'column'
+      } else {
+        return 'row'
+      }
+    },
+    leftRightMargin() {
+      if (this.isMobile) {
+        return '0'
+      } else {
+        return '4rem'
+      }
+    },
+    leftRightWidth() {
+      if (this.isMobile) {
+        return '100%'
+      } else {
+        return '50%'
+      }
+    },
+  },
 })
 </script>
 
@@ -61,11 +84,20 @@ export default defineComponent({
 .HomeView {
   display: flex;
   justify-content: space-between;
-  margin: 0 4rem;
+  margin-left: v-bind(leftRightMargin);
+  margin-right: v-bind(leftRightMargin);
   gap: 2rem;
+  flex-direction: v-bind(flexDirection);
 }
 .Left {
   padding-top: 1rem;
+  width: v-bind(leftRightWidth);
+  max-width: 50rem;
+  margin: 0 auto;
+}
+.Right {
+  width: v-bind(leftRightWidth);
+  justify-items: center;
 }
 .Intro {
   text-align: justify;
