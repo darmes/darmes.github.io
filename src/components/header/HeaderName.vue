@@ -17,7 +17,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useWindowSize } from '@vueuse/core'
+import useMobile from '@/utilities/useMobile'
 import Drawer from 'primevue/drawer'
 import SocialsButtonGroup from '../buttons/SocialsButtonGroup.vue'
 
@@ -34,13 +34,8 @@ export default defineComponent({
   },
   setup() {
     return {
-      windowSize: useWindowSize(),
+      isMobile: useMobile().isMobile,
     }
-  },
-  computed: {
-    isMobile() {
-      return this.windowSize.width.value <= 768
-    },
   },
   methods: {
     toggleDrawer() {

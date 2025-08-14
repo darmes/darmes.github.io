@@ -29,7 +29,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useWindowSize } from '@vueuse/core'
 import DetailCard from '@/components/detail/DetailCard.vue'
 import DetailRoot from '@/components/detail/DetailRoot.vue'
 
@@ -39,25 +38,5 @@ export default defineComponent({
     DetailCard,
     DetailRoot,
   },
-  setup() {
-    return {
-      windowSize: useWindowSize(),
-    }
-  },
-  computed: {
-    isMobile() {
-      return this.windowSize.width.value <= 768
-    },
-  },
 })
 </script>
-
-<style scoped>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>

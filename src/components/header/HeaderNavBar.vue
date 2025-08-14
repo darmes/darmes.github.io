@@ -12,7 +12,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useWindowSize } from '@vueuse/core'
 
 export default defineComponent({
   name: 'HeaderNavBar',
@@ -22,16 +21,6 @@ export default defineComponent({
       type: Boolean,
       required: false,
       default: false,
-    },
-  },
-  setup() {
-    return {
-      windowSize: useWindowSize(),
-    }
-  },
-  computed: {
-    isMobile() {
-      return this.windowSize.width.value <= 768
     },
   },
 })

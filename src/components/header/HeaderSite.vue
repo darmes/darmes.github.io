@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useWindowSize } from '@vueuse/core'
+import useMobile from '@/utilities/useMobile'
 import HeaderName from './HeaderName.vue'
 import HeaderNavBar from './HeaderNavBar.vue'
 import HeaderMobileNavBar from './HeaderMobileNavBar.vue'
@@ -20,13 +20,8 @@ export default defineComponent({
   },
   setup() {
     return {
-      windowSize: useWindowSize(),
+      isMobile: useMobile().isMobile,
     }
-  },
-  computed: {
-    isMobile() {
-      return this.windowSize.width.value <= 768
-    },
   },
 })
 </script>

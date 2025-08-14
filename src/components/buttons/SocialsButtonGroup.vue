@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useWindowSize, useDark } from '@vueuse/core'
+import { useDark } from '@vueuse/core'
 import ButtonLinkSocial from './ButtonLink.vue'
 
 export default defineComponent({
@@ -24,14 +24,10 @@ export default defineComponent({
   },
   setup() {
     return {
-      windowSize: useWindowSize(),
       isDark: useDark(),
     }
   },
   computed: {
-    isMobile() {
-      return this.windowSize.width.value <= 768
-    },
     githubLogo() {
       if (this.isDark) {
         return '/github-mark/github-mark-white.png'

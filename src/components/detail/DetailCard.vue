@@ -15,7 +15,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useWindowSize } from '@vueuse/core'
 
 export default defineComponent({
   name: 'DetailCard',
@@ -29,16 +28,6 @@ export default defineComponent({
       type: String,
       required: false,
       default: '',
-    },
-  },
-  setup() {
-    return {
-      windowSize: useWindowSize(),
-    }
-  },
-  computed: {
-    isMobile() {
-      return this.windowSize.width.value <= 768
     },
   },
 })

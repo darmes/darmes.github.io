@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useWindowSize } from '@vueuse/core'
+import useMobile from '@/utilities/useMobile'
 
 export default defineComponent({
   name: 'ButtonLinkSocial',
@@ -27,13 +27,8 @@ export default defineComponent({
   },
   setup() {
     return {
-      windowSize: useWindowSize(),
+      isMobile: useMobile().isMobile,
     }
-  },
-  computed: {
-    isMobile() {
-      return this.windowSize.width.value <= 1024
-    },
   },
 })
 </script>

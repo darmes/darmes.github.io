@@ -6,7 +6,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useWindowSize } from '@vueuse/core'
 
 export default defineComponent({
   name: 'DetailChip',
@@ -14,16 +13,6 @@ export default defineComponent({
     label: {
       type: String,
       required: true,
-    },
-  },
-  setup() {
-    return {
-      windowSize: useWindowSize(),
-    }
-  },
-  computed: {
-    isMobile() {
-      return this.windowSize.width.value <= 768
     },
   },
 })

@@ -21,7 +21,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useWindowSize } from '@vueuse/core'
 import Avatar from 'primevue/avatar'
 import HeaderNavBar from '@/components/header/HeaderNavBar.vue'
 
@@ -30,16 +29,6 @@ export default defineComponent({
   components: {
     Avatar,
     HeaderNavBar,
-  },
-  setup() {
-    return {
-      windowSize: useWindowSize(),
-    }
-  },
-  computed: {
-    isMobile() {
-      return this.windowSize.width.value <= 768
-    },
   },
 })
 </script>

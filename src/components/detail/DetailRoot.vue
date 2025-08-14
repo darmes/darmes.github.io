@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useWindowSize } from '@vueuse/core'
+import useMobile from '@/utilities/useMobile'
 
 export default defineComponent({
   name: 'DetailRoot',
@@ -28,12 +28,16 @@ export default defineComponent({
   },
   setup() {
     return {
-      windowSize: useWindowSize(),
+      isMobile: useMobile().isMobile,
     }
   },
   computed: {
-    isMobile() {
-      return this.windowSize.width.value <= 768
+    leftRightMargin() {
+      if (this.isMobile) {
+        return '4rem'
+      } else {
+        return '0'
+      }
     },
   },
 })
@@ -41,7 +45,8 @@ export default defineComponent({
 
 <style scoped>
 .DetailRoot {
-  margin: 0 4rem;
+  margin-left: v-bind(leftRightMargin);
+  margin-right: v-bind(leftRightMargin);
 }
 .Title {
   display: block;

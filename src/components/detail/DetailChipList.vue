@@ -6,7 +6,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { useWindowSize } from '@vueuse/core'
 import Chip from './DetailChip.vue'
 
 export default defineComponent({
@@ -18,16 +17,6 @@ export default defineComponent({
     chips: {
       type: Array<string>,
       required: true,
-    },
-  },
-  setup() {
-    return {
-      windowSize: useWindowSize(),
-    }
-  },
-  computed: {
-    isMobile() {
-      return this.windowSize.width.value <= 768
     },
   },
 })
