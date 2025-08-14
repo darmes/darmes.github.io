@@ -47,7 +47,7 @@
   --color-accent-two-dark: hsl(var(--color-accent-two-dark-base));
   --color-accent-two-light: hsl(var(--color-accent-two-light-base));
 
-  --color-background-link-hover: hsl(var(--color-accent-two-light-base) / 0.2);
+  --color-background-link-hover: hsl(var(--color-accent-light-base) / 0.2);
   --color-text-link-hover: hsl(230 69% 31% / 1);
   --color-text-link: var(--color-accent-dark);
 
@@ -77,7 +77,7 @@
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
 
-    --color-background-link-hover: hsl(var(--color-accent-two-dark-base) / 0.2);
+    --color-background-link-hover: hsl(var(--color-accent-dark-base) / 0.2);
     --color-text-link-hover: hsl(210 100% 75% / 1);
     --color-text-link: var(--color-accent-light);
   }
