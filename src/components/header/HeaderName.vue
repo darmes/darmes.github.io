@@ -1,20 +1,36 @@
 <template>
   <div class="HeaderRoot gradient-border">
-    <span v-if="isMobile" class="material-symbols-outlined"> menu </span>
+    <span v-if="isMobile" class="material-symbols-outlined" :onClick="toggleDrawer"> menu </span>
     <h1>David Armes</h1>
-    <SocialsButtonGroup />
+    <SocialsButtonGroup v-if="!isMobile" />
+    <Drawer v-model:visible="menuOpen" header="Navigation">
+      <nav>
+        <RouterLink :onClick="toggleDrawer" to="/">Home</RouterLink>
+        <RouterLink :onClick="toggleDrawer" to="/skills">Skills</RouterLink>
+        <RouterLink :onClick="toggleDrawer" to="/experience">Experience</RouterLink>
+        <RouterLink :onClick="toggleDrawer" to="/projects">Projects</RouterLink>
+        <RouterLink :onClick="toggleDrawer" to="/about">About</RouterLink>
+      </nav>
+    </Drawer>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useWindowSize } from '@vueuse/core'
+import Drawer from 'primevue/drawer'
 import SocialsButtonGroup from '../buttons/SocialsButtonGroup.vue'
 
 export default defineComponent({
   name: 'HeaderSite',
   components: {
+    Drawer,
     SocialsButtonGroup,
+  },
+  data() {
+    return {
+      menuOpen: false,
+    }
   },
   setup() {
     return {
@@ -24,6 +40,11 @@ export default defineComponent({
   computed: {
     isMobile() {
       return this.windowSize.width.value <= 768
+    },
+  },
+  methods: {
+    toggleDrawer() {
+      this.menuOpen = !this.menuOpen
     },
   },
 })
@@ -55,10 +76,15 @@ img {
   width: 2rem;
 }
 
-nav {
-  width: 100%;
-  position: relative;
+nav,
+span {
   z-index: 100;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 nav a.router-link-exact-active {
@@ -72,10 +98,7 @@ nav a.router-link-exact-active:hover {
 nav a {
   display: inline-block;
   padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
+  font-size: large;
+  font-weight: bold;
 }
 </style>

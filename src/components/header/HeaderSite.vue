@@ -1,6 +1,7 @@
 <template>
   <HeaderName />
-  <HeaderNavBar />
+  <HeaderMobileNavBar v-if="isMobile" />
+  <HeaderNavBar v-else />
 </template>
 
 <script lang="ts">
@@ -8,12 +9,14 @@ import { defineComponent } from 'vue'
 import { useWindowSize } from '@vueuse/core'
 import HeaderName from './HeaderName.vue'
 import HeaderNavBar from './HeaderNavBar.vue'
+import HeaderMobileNavBar from './HeaderMobileNavBar.vue'
 
 export default defineComponent({
   name: 'HeaderSite',
   components: {
     HeaderName,
     HeaderNavBar,
+    HeaderMobileNavBar,
   },
   setup() {
     return {
