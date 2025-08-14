@@ -15,6 +15,7 @@ import HeaderSite from './components/header/HeaderSite.vue'
 header {
   line-height: 1.5;
   max-height: 100vh;
+  margin-bottom: 3rem;
 }
 
 .logo {
