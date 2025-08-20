@@ -11,7 +11,12 @@
         <ButtonLink label="Learn More" link="https://aledade.com/what-we-offer/" />
       </div>
       <template #side-content>
-        <pvImage src="/projects/care-programs-worklist.webp" alt="Image" height="200" preview />
+        <pvImage
+          src="/projects/care-programs-worklist.webp"
+          alt="screenshot of project"
+          height="200"
+          preview
+        />
       </template>
     </DetailCard>
     <!-- Quest Journal -->
@@ -28,7 +33,12 @@
         />
       </div>
       <template #side-content>
-        <pvImage src="/projects/quest-journal.webp" alt="Image" height="200" preview />
+        <pvImage
+          src="/projects/quest-journal.webp"
+          alt="screenshot of project"
+          height="200"
+          preview
+        />
       </template>
     </DetailCard>
     <!-- Disaster on Aero VI -->
@@ -46,7 +56,12 @@
         />
       </div>
       <template #side-content>
-        <pvImage src="/projects/bridge-aero-vi.webp" alt="Image" height="200" preview />
+        <pvImage
+          src="/projects/bridge-aero-vi.webp"
+          alt="screenshot of project"
+          height="200"
+          preview
+        />
       </template>
     </DetailCard>
     <!-- Artificial Intelligence -->
@@ -61,7 +76,7 @@
         <ButtonLink label="Learn More" link="./projects/RPM-AI-Paper.pdf" />
       </div>
       <template #side-content>
-        <pvImage src="/projects/raven-ai.webp" alt="Image" height="200" preview />
+        <pvImage src="/projects/raven-ai.webp" alt="screenshot of project" height="200" preview />
       </template>
     </DetailCard>
   </DetailRoot>

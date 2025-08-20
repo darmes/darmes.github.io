@@ -1,7 +1,7 @@
 <template>
   <div class="HomeView">
     <div class="Left gradient-border">
-      <pvImage src="/family.webp" alt="Image" width="100%" />
+      <pvImage src="/family.webp" alt="Family Photo" width="100%" />
     </div>
     <div class="Right">
       <div class="Intro">
