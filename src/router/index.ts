@@ -1,6 +1,9 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import SkillsView from '@/views/SkillsView.vue'
+import ExperienceView from '@/views/ExperienceView.vue'
+import ProjectsView from '@/views/ProjectsView.vue'
+import AboutView from '@/views/AboutView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -16,23 +19,24 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: SkillsView,
       // component: () => import('../views/SkillsView.vue'),
+      // Can't use lazy loading and still have direct URLs :(
+      component: SkillsView,
     },
     {
       path: '/experience',
       name: 'experience',
-      component: () => import('../views/ExperienceView.vue'),
+      component: ExperienceView,
     },
     {
       path: '/projects',
       name: 'projects',
-      component: () => import('../views/ProjectsView.vue'),
+      component: ProjectsView,
     },
     {
       path: '/about',
       name: 'about',
-      component: () => import('../views/AboutView.vue'),
+      component: AboutView,
     },
   ],
 })
