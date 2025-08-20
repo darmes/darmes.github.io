@@ -1,5 +1,5 @@
 <template>
-  <a class="ButtonRoot gradient-border" :href="link" target="_blank">
+  <a class="ButtonRoot gradient-border" :href="link" target="_blank" :aria-label="label">
     <div class="ImgLabel">
       <slot></slot>
       <div v-if="!$slots.default || !isMobile">

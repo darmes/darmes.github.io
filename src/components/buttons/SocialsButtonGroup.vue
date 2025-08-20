@@ -4,10 +4,10 @@
       <span class="material-symbols-outlined"> email </span>
     </ButtonLinkSocial>
     <ButtonLinkSocial link="https://www.linkedin.com/in/david-armes-sse/" label="LinkedIn">
-      <img :src="linkedInLogo" />
+      <img :src="linkedInLogo" alt="LinkedIn Logo" />
     </ButtonLinkSocial>
     <ButtonLinkSocial link="https://github.com/darmes" label="Github">
-      <img :src="githubLogo" />
+      <img :src="githubLogo" alt="Github Logo" />
     </ButtonLinkSocial>
   </div>
 </template>

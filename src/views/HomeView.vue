@@ -1,7 +1,7 @@
 <template>
   <div class="HomeView">
     <div class="AvatarContainer">
-      <Avatar image="/profile.webp" shape="circle" class="Avatar" />
+      <Avatar image="/profile.webp" shape="circle" class="Avatar" alt="Profile Photo" />
     </div>
     <div class="Name">David Armes</div>
     <div class="Title">Senior Software Engineer</div>
