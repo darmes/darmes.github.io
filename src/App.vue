@@ -1,26 +1,51 @@
 <template>
-  <header>
-    <HeaderSite />
-  </header>
+  <div class="wrapper">
+    <header>
+      <HeaderSite />
+    </header>
 
-  <!-- Slides left or right depending on where we're coming from -->
-  <router-view v-slot="{ Component, route }">
-    <transition mode="out-in" :name="route.meta.transition as string">
-      <component :is="Component" />
-    </transition>
-  </router-view>
+    <!-- Slides left or right depending on where we're coming from -->
+    <router-view v-slot="{ Component, route }">
+      <transition mode="out-in" :name="route.meta.transition as string">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+
+    <footer>
+      <div id="footer">
+        <p>© {{ currentYear }} David Armes. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import HeaderSite from './components/header/HeaderSite.vue'
+const currentYear = new Date().getFullYear()
 </script>
 
 <style scoped>
+.wrapper {
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Minimum height equal to the viewport height */
+  margin: 0 auto;
+  padding: 2rem;
+  padding-bottom: 1rem;
+  font-weight: normal;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
   margin-bottom: 3rem;
+}
+
+footer {
+  margin-top: auto; /* Pushes the footer to the bottom */
+  justify-items: end;
 }
 
 .logo {
